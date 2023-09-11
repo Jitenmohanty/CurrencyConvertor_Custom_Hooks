@@ -16,11 +16,11 @@ const InputBox = ({
       <div className="w-1/2">
         <label className="text-black/40 mb-2 inline-block">{label}</label>
         <input
-          className="outline-none w-full bg-transparent py-1.5 bg-slate-700 rounded-md text-white text-xl"
+          className="outline-none w-full bg-transparent py-1.5 bg-slate-700 rounded-md text-white text-xl px-1"
           type="number"
           placeholder="Amount"
           disabled={amountDisable}
-          value={amount}
+          value={amount === 0 ?"":amount}
           onChange={(e) =>
             onAmountChange && onAmountChange(Number(e.target.value))
           }
