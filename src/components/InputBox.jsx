@@ -16,7 +16,7 @@ const InputBox = ({
       <div className="w-1/2">
         <label className="text-black/40 mb-2 inline-block">{label}</label>
         <input
-          className="outline-none w-full bg-transparent py-1.5 bg-slate-700 rounded-md text-white text-xl px-1"
+          className="outline-none w-full bg-transparent py-1.5 bg-slate-700 rounded-md text-black text-xl px-1"
           type="number"
           placeholder="Amount"
           disabled={amountDisable}
@@ -29,7 +29,7 @@ const InputBox = ({
       <div className="w-1/2 flex flex-wrap justify-end text-right">
         <p className="text-black/40 mb-2 w-full">Currency Type</p>
         <select
-          className=" px-1 py-1cursor-pointer outline-none  bg-slate-700 rounded-md text-white text-xl"
+          className=" px-1 py-1cursor-pointer outline-none  bg-slate-700 rounded-md text-black text-xl"
           value={selectCurrency}
           disabled={currencyDisable}
           onChange={(e) => onCurrencyChange && onCurrencyChange(e.target.value)}
