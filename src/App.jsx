@@ -12,22 +12,22 @@ function App() {
 
   const options = Object.keys(currencyInfo);
 
-  const convert =()=>{
-    setConvertedAmount(amount * currencyInfo[to])
-  }
+  const convert = () => {
+    setConvertedAmount((amount * currencyInfo[to]).toFixed(4));
+  };
 
-  const onSwap = ()=>{
-    setFrom(to)
-    setTo(from)
-    setConvertedAmount(amount)
-    setAmount(amount)
-  }
+  const onSwap = () => {
+    setFrom(to);
+    setTo(from);
+    setConvertedAmount(amount);
+    setAmount(amount);
+  };
 
   return (
     <div
       className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
       style={{
-        backgroundImage: `url('https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg?auto=compress&cs=tinysrgb&w=600')`,
+        backgroundImage: `url('https://images.pexels.com/photos/366551/pexels-photo-366551.jpeg?auto=compress&cs=tinysrgb&w=600')`
       }}
     >
       <div className="w-full">
@@ -35,7 +35,7 @@ function App() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              convert()
+              convert();
             }}
           >
             <div className="w-full mb-1">
@@ -48,10 +48,10 @@ function App() {
                 onCurrencyChange={(currency) => setFrom(currency)}
               />
             </div>
-            <div className="relative w-full h-0.5">
+            <div className="relative w-full h-0.5 mt-2">
               <button
                 type="button"
-                className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white rounded-md bg-blue-600 text-white px-2 py-0.5"
+                className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white rounded-md bg-blue-600 text-white px-2 text-md  py-1 "
                 onClick={onSwap}
               >
                 swap
@@ -63,7 +63,7 @@ function App() {
                 amount={convertedAmount}
                 currencyOptions={options}
                 selectCurrency={to}
-                onCurrencyChange={(currency)=>setTo(currency)}
+                onCurrencyChange={(currency) => setTo(currency)}
                 amountDisable
               />
             </div>
@@ -71,7 +71,7 @@ function App() {
               type="submit"
               className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg"
             >
-              Convert
+              Convert {from.toUpperCase()} to {to.toUpperCase()}
             </button>
           </form>
         </div>
